@@ -35,12 +35,15 @@ namespace ConsoleApp1
 
         }
 
-        /// <summary>
-        /// Visszaadja a 10 legnagyobb népességű várost a megadott évben
-        /// </summary>
         List<City> Top10City(int year)
         {
-            Cityes.OrderBy(x => x.);
+            return Cityes.OrderByDescending(x =>
+            year == 2010 ? x.Y2010 :
+            year == 2020 ? x.Y2020 :
+            year == 2030 ? x.Y2030 :
+            year == 2040 ? x.Y2040 :
+            year == 2050 ? x.Y2050 :
+            0).Where((x, i) => i <= 10).ToList();
         }
     }
 }
